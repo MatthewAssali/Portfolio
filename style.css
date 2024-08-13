@@ -1,0 +1,48 @@
+﻿body {
+    font-family: 'Saira Extra Condensed', 'Muli', sans-serif;
+    padding-top: 56px; /* Adjusts for the fixed navbar */
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.navbar {
+    margin-bottom: 50px;
+}
+
+.container-fluid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.resume-section {
+    padding: 50px 0;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+    .social-icons a {
+        font-size: 1.5rem;
+        color: #333;
+        margin-right: 10px;
+        text-decoration: none;
+    }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+.list-group-item {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+}
+
+.text-primary {
+    color: #007bff !important;
+}
