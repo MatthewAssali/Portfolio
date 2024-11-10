@@ -328,3 +328,20 @@ jQuery(document).ready(function ($) {
 		$newWord.removeClass('is-hidden').addClass('is-visible');
 	}
 });
+document.addEventListener("DOMContentLoaded", function () {
+	const toggleCheckbox = document.getElementById("mode-toggle"); // Selects the checkbox toggle
+
+	// Load the current theme from localStorage or default to 'light'
+	const currentTheme = localStorage.getItem("theme") || "light";
+	document.documentElement.setAttribute("data-theme", currentTheme);
+	toggleCheckbox.checked = currentTheme === "dark"; // Set toggle state based on theme
+
+	// Listen for changes on the toggle checkbox
+	toggleCheckbox.addEventListener("change", function () {
+		const newTheme = toggleCheckbox.checked ? "dark" : "light";
+		document.documentElement.setAttribute("data-theme", newTheme);
+		localStorage.setItem("theme", newTheme); // Save the user's theme preference
+	});
+});
+
+
