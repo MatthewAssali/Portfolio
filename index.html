@@ -310,22 +310,25 @@
                 <h2 class="mb-5">Feedback</h2>
                 <div>
                     <p>If you have any thoughts or comments, I would love to hear from you. Your feedback is invaluable!</p>
-                    <!-- Form -->
-                    <form id="feedback-form" name="feedback-form" method="POST" data-netlify="true">
+                    <!-- Updated Form -->
+                    <form id="feedback-form"
+                          action="https://formspree.io/f/mrbgyqjg"
+                          method="POST">
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" required />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" required />
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required />
                         </div>
                         <div class="form-group">
-                            <label for="feedback">Feedback:</label>
-                            <textarea class="form-control" id="feedback" name="feedback" required></textarea>
+                            <label for="message">Feedback:</label>
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Feedback" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <div id="form-message" style="margin-top: 10px;"></div>
                 </div>
             </div>
         </section>

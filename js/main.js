@@ -328,6 +328,8 @@ jQuery(document).ready(function ($) {
 		$newWord.removeClass('is-hidden').addClass('is-visible');
 	}
 });
+
+// Light/Dark mode toggle button
 document.addEventListener("DOMContentLoaded", function () {
 	const toggleCheckbox = document.getElementById("mode-toggle"); // Selects the checkbox toggle
 
@@ -341,6 +343,41 @@ document.addEventListener("DOMContentLoaded", function () {
 		const newTheme = toggleCheckbox.checked ? "dark" : "light";
 		document.documentElement.setAttribute("data-theme", newTheme);
 		localStorage.setItem("theme", newTheme); // Save the user's theme preference
+	});
+});
+// feedback button
+document.addEventListener("DOMContentLoaded", function () {
+	const form = document.querySelector("#feedback-form");
+
+	form.addEventListener("submit", function (e) {
+		e.preventDefault(); // Prevent default form submission
+		const formData = new FormData(form);
+
+		fetch(form.action, {
+			method: "POST",
+			headers: { Accept: "application/json" },
+			body: formData,
+		})
+			.then((response) => {
+				if (response.ok) {
+					document.getElementById("form-message").innerHTML =
+						"Thank you for your feedback!";
+					document.getElementById("form-message").className =
+						"alert alert-success";
+					form.reset(); // Clear form fields after submission
+				} else {
+					document.getElementById("form-message").innerHTML =
+						"Oops! Something went wrong. Please try again later.";
+					document.getElementById("form-message").className =
+						"alert alert-danger";
+				}
+			})
+			.catch(() => {
+				document.getElementById("form-message").innerHTML =
+					"Oops! Something went wrong. Please try again later.";
+				document.getElementById("form-message").className =
+					"alert alert-danger";
+			});
 	});
 });
 
